@@ -18,6 +18,7 @@ export const ContextProvider = ({ children }) => {
   }
 
   const getTheme = ()=> setTheme("a")
+  
   useEffect(()=>{
     getTheme();
     getData();

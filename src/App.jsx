@@ -11,13 +11,13 @@ function App() {
       
         <div className="App">
           <Navbar/>
-          {data.map((data)=>{
+          {/* {data.map((data)=>{
             return(
               <div key={data.id}>
                 {data.name}
                 </div>
             )
-          })}
+          })} */}
           <Footer/>
         </div>
     
