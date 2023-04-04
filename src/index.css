@@ -94,8 +94,14 @@ form{
   margin: 0 auto;
 }
 
+/*Agregado*/
+.card-img-top {
+  box-sizing: content-box;
+  width: 100%;
+}
+
 table {
- border-collapse: collapse;
+    border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
     display: table;
