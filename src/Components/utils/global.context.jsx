@@ -6,10 +6,7 @@ export const initialState = {theme: "light", data: []}
 //Contexto Global
 export const ContextGlobal = createContext(initialState);
 
-//Estado booleano
-//const lightTheme= true;
-
-//Reducer
+//Theme Reducer
 const themeReducer= (state,action)=>{
   switch(action.type){
     case "SWITCH_THEME": 
@@ -17,30 +14,27 @@ const themeReducer= (state,action)=>{
     default: return state;
   }
 }
+
 export const ContextProvider = ({ children }) => {
   //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
-  const [state, dispatch] = useReducer(themeReducer, true);
+  const [themeState, dispatch] = useReducer(themeReducer, true);
 
-  const [data, setData] = useState([])
-  const theme= (state?"light":"dark");
-  
+  const theme= (themeState?"light":"dark");
 
-
-  const getData = async ()=>{
-    fetch ("https://jsonplaceholder.typicode.com/users")
-    .then((answer)=>  answer.json())
-    .then((dataResponse)=>setData(dataResponse))
-  }
+  //Manejador del evento de cambiar el tema. usa el dispatch
   const handlerTheme = ()=>{
     dispatch({type:"SWITCH_THEME"})
   }
 
-  
-  
-  
+
+//Data de la API
+  const [data, setData] = useState([])
   useEffect(()=>{
-    getData();
-    },
+    const getData = async ()=>{
+      const response= await fetch ("https://jsonplaceholder.typicode.com/users")
+      const dataResponse= await response.json()
+      setData(dataResponse)}
+    getData()},
     [])
 
   return (
