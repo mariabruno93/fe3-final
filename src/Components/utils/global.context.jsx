@@ -15,13 +15,32 @@ const themeReducer= (state,action)=>{
   }
 }
 
+//PARA FAVORITOS
+const getItemsFromStorage = () => {
+  const localData = localStorage.getItem("item");
+  return localData ? JSON.parse(localData) : [];
+};
+
+const saveItemsInStorage = (item) => {
+  localStorage.setItem("item", JSON.stringify(item));
+};
+
+const favsReducer = (state, action) => {
+  switch (action.type) {
+    case "ADD_FAVS":
+      saveItemsInStorage([...state,action.payload]);
+      return [...state,action.payload];
+    default:
+      return state;
+  }
+};
+
 export const ContextProvider = ({ children }) => {
   //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
   const [themeState, dispatch] = useReducer(themeReducer, true);
 
   const theme= (themeState?"light":"dark");
 
-  //Manejador del evento de cambiar el tema. usa el dispatch
   const handlerTheme = ()=>{
     dispatch({type:"SWITCH_THEME"})
   }
@@ -37,8 +56,12 @@ export const ContextProvider = ({ children }) => {
     getData()},
     [])
 
+    //Data de favs
+    const [state, dispatchFavs] = useReducer(favsReducer, {}, getItemsFromStorage);
+    
+
   return (
-    <ContextGlobal.Provider value={{theme, data, handlerTheme}}>
+    <ContextGlobal.Provider value={{theme, data, handlerTheme,state,dispatchFavs}}>
       {children}
     </ContextGlobal.Provider>
   );

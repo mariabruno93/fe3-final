@@ -1,11 +1,21 @@
+/* eslint-disable no-unused-expressions */
 import React from "react";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
+import { ContextGlobal } from "../Components/utils/global.context"
 
 const Card = ({ data }) => {
+  const {dispatchFavs}= useContext(ContextGlobal)
 
-  const addFav = ()=>{
-    // Aqui iria la logica para agregar la Card en el localStorage
+  const addFav = (dataID)=>{
+    dispatchFavs({
+      type: "ADD_FAVS",
+      payload: {
+        id:  data.id,
+      }
+    });
+    const favButtons= document.getElementsByClassName("favsButton")
+    console.log(favButtons)
   }
 
   return (
@@ -20,7 +30,7 @@ const Card = ({ data }) => {
         {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
 
         {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
-        <button onClick={addFav} className="favButton">Add fav</button>
+        <button id={data.id} onClick={addFav(data.id)} className="favsButton">Add fav</button>
     </div>
   );
 };
