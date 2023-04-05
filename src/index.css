@@ -126,3 +126,7 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+.light{
+  background-color: #a2ed0c96;
+  color: rgb(2, 11, 40);
+}
