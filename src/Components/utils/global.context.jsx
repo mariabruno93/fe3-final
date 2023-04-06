@@ -29,6 +29,7 @@ const favsReducer = (state, action) => {
   switch (action.type) {
     case "ADD_FAVS":
       saveItemsInStorage([...state,action.payload]);
+      getItemsFromStorage()
       return [...state,action.payload];
     default:
       return state;
