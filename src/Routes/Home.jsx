@@ -8,7 +8,7 @@ import  {ContextGlobal}  from "../Components/utils/global.context"
 //retocado por Dani
 const Home = () => {
   
-  const {data} = useContext(ContextGlobal);
+  const {data, setDetails} = useContext(ContextGlobal);
 
   return (
     <main className='outlet'>
@@ -17,7 +17,7 @@ const Home = () => {
         {/* Aqui deberias renderizar las cards */
         data.map((data)=>(
           <div key={data.id}>
-            <Card {...data} data={data} />
+            <Card {...data} data={data} details={setDetails(false)} />
           </div>
         ))
       }

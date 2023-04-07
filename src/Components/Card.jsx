@@ -6,9 +6,10 @@ import { ContextGlobal } from "../Components/utils/global.context"
 import swal from 'sweetalert';
 
 const Card = ({ data }) => {
-  const {state, dispatchFavs}= useContext(ContextGlobal)
-
+  const {state, dispatchFavs,details}= useContext(ContextGlobal)
+  
   const [habilitado, setHabilitado] = useState(false);
+  
 
   const siPresionaAgregar  = () => {
     return swal("Agregado a favoritos");
@@ -46,9 +47,11 @@ const Card = ({ data }) => {
           src="/images/doctor.jpg"
           alt="doctor placeholder" />
           </Link>
-        {/* No debes olvidar que la Card a su vez servira como Link hacia la pagina de detalle */}
-
-        {/* Ademas deberan integrar la logica para guardar cada Card en el localStorage */}
+          {details&&<>
+						<div>Name: {data.name}</div>
+						<div>Email: {data.email}</div>
+						<div>Phone: {data.phone}</div>
+	 				</>}
         <button
           disabled = {habilitado}
           value={data.id}

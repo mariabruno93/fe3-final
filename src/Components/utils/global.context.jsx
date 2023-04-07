@@ -63,9 +63,11 @@ export const ContextProvider = ({ children }) => {
     //Data de favs
     const [state, dispatchFavs] = useReducer(favsReducer, {}, getItemsFromStorage);
     
+    //Details
+    const[details,setDetails]=useState(false);
 
   return (
-    <ContextGlobal.Provider value={{theme, data, handlerTheme,state,dispatchFavs}}>
+    <ContextGlobal.Provider value={{theme, data, handlerTheme,state,dispatchFavs,details,setDetails}}>
       {children}
     </ContextGlobal.Provider>
   );
