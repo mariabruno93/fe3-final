@@ -26,7 +26,7 @@ const Navbar = () => {
 		</div>
       {/* Deberan implementar ademas la logica para cambiar de Theme con el button */}
 	  <div>
-      <button onClick={handlerTheme}>Change theme</button>
+      <button className='button-change' onClick={handlerTheme}>Change theme</button>
       </div>
     </nav>
   )

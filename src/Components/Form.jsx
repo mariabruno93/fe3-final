@@ -40,13 +40,15 @@ const Form = () => {
       <form onSubmit={handleSubmit}>
         <input 
           type="text"
+          className="input"
           onChange={onChangeName}
           placeholder="Nombre Completo" />
         <input 
           type="email"
+          className="input"
           onChange={onChangeEmail}
           placeholder="Email" />
-          <button type="submit">Enviar</button>
+          <button type="submit" className="button-form">Enviar</button>
           {mostrarError && <p>Por favor verifique su información nuevamente</p>}
           {mostrarExito && <p>Gracias {name}, te contactaremos cuando antes vía mail</p>}
       </form>

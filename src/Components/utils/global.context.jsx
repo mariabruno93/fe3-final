@@ -29,8 +29,11 @@ const favsReducer = (state, action) => {
   switch (action.type) {
     case "ADD_FAVS":
       saveItemsInStorage([...state,action.payload]);
-      getItemsFromStorage()
       return [...state,action.payload];
+      case "REMOVE_FAVS":
+        const filteredTodos = state.filter((item) => item.id !== action.payload);
+        saveItemsInStorage(filteredTodos);
+        return filteredTodos;
     default:
       return state;
   }

@@ -26,7 +26,7 @@ const Detail = () => {
 
   console.log(dentist.id)
 
-  return (
+	return (
 		<div>
 		{dentist && (
 		<div>
