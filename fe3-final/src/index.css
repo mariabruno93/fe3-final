@@ -1,0 +1,266 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/*agregado Dani*/
+.favButton{
+  background-color: rgba(207, 170, 170, 0.63);
+  padding: 10px;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 800;
+}
+
+/*agregado Dani*/
+.button-change{
+  background-color: #1a0b5e;
+  border: none;
+  color: white;
+  padding: 7px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+h1{
+  text-align: center;
+}
+
+nav{
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-evenly;
+  padding: 1rem;
+  height: 5vh;
+  background-color: #81727265;
+}
+
+/*agregado Dani*/
+.nav-link{
+  color: rgb(26, 19, 20);
+  font-weight: 800;
+}
+
+a{
+  color: #000;
+  text-decoration: none;
+  margin: 5px;
+  cursor: pointer;
+}
+a:hover{
+  color: rgb(136, 136, 136);
+} 
+
+footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  /*padding: 2rem;*/
+  position: relative;
+  bottom: 0;
+  width: 100vw;
+  height: auto;
+  margin-top: 2rem;
+  background-color: #e4d7d7;
+
+  flex-direction: row;
+  padding: 1rem;
+  height: 5vh;
+}
+
+footer > img{
+  width: 200px;
+  margin: 0;
+}
+footer > p{
+  margin: 0;
+  padding-top: 0.7rem;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 300px;
+  height: 100px;
+  margin: 0 auto;
+}
+
+.card{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  height: 100%;
+  font-size: small;
+  padding: 0.5rem 0.5rem 0 0.5rem;
+  border: 0.5px solid rgb(136, 136, 136);
+  border-radius: 7px;
+  text-align: center;
+}
+
+/*agregado Dani*/
+.into-card{
+  background-color: rgb(235, 230, 230);
+}
+
+
+.card:hover{
+  border: 0.5px solid rgb(206, 217, 142);
+}
+
+.card-grid{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 1rem;
+  height: auto;
+  flex-wrap: wrap;
+  margin: 0 auto;
+
+}
+
+/*Agregado*/
+.card-img-top {
+  box-sizing: content-box;
+  width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    display: table;
+    border: 1px solid #ccc;
+
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+
+.light{
+  background-color: #ffffff96;
+  color: rgb(2, 11, 40);
+}
+
+
+.dark{
+  background-color: #12121296;
+  color: white;
+  
+}
+.dark > a {
+  color: white;
+}
+/*agregado Dani*/
+.dark .card{
+  background-color: #f2f5f752;
+  color: white;
+}
+
+.dark .into-card{
+  background-color: #614a3752;
+}
+
+.dark nav{
+  background-color: #02283b52;
+}
+
+.dark footer{
+  background-color: #3c474d52;
+}
+
+.dark .card h2{
+  color: white;
+}
+
+.dark .button-change{
+  background-color: #d8a1b3;
+  border: none;
+  color: white;
+}
+
+.dark .nav-link{
+  color:  white;
+  
+  }
+
+.dark .favButton{
+  color:  rgb(214, 210, 210);
+  background-color: #565070;
+  }
+
+.outlet{
+    width: 100vw;
+    height: 100vw;
+  }
+
+.contact {
+  width: 100vw;
+}
+
+.contact h2{
+  margin-left: 40px;
+}
+
+.contact p{
+  margin-left: 30px;
+}
+
+.button-form{
+  border: none;
+  color: white;
+  background-color: #803f3f;
+  padding: 16px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.dark .button-form{
+  border: none;
+  color: rgb(99, 95, 95);
+  background-color: #f1b1b1;
+}
+
+.input {
+  width: 100%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
